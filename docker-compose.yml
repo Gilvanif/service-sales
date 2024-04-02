@@ -1,0 +1,14 @@
+version: "3"
+services:
+    service_sales:
+        container_name: service-sales
+        build:
+            dockerfile: Dockerfile
+            context: .
+        volumes:
+            - .:/user/src/app
+        env_file:
+            - .env
+        ports:
+            - "3050:3050"
+        restart: always
